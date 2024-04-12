@@ -95,7 +95,7 @@
             }
             .skill-text
             {
-              font-size: 18px;
+              font-size: 14px;
               line-height: 18px;
             }
             .services-icon{
@@ -152,16 +152,30 @@
         color: #F6BBD4;
       }
       
+      #scrollToTopBtn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: none;
+}
+
+#scrollToTopBtn.show {
+  display: block;
+}
+
+      
     </style>
   </head>
   <body>
+    <button id="scrollToTopBtn" class="btn btn-outline-dark btn-lg hidden fs-4"><i class="bi bi-arrow-up-circle"></i></button>
+
     <div class="hero"></div>
     <!-- navbar -->
     <nav class="navbar navbar-expand-lg bg-black py-3" data-bs-theme="dark" data-aos="fade-down"
     data-aos-easing="linear"
     data-aos-duration="700">
         <div class="container">
-          <a class="navbar-brand" href="#"><span class="h3">Trixie<span class="h2 text-pink">VA</span></span></a>
+          <a class="navbar-brand" href=""><span class="h3">Trixie<span class="h2 text-pink">VA</span></span></a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -381,7 +395,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md">
-                    <div class="logo-intro lead fw-bold skill-text" data-aos="fade-up"
+                    <div class="logo-intro fs-5 fw-bold skill-text" data-aos="fade-up"
                     data-aos-duration="900">Expertly scheduling meetings, creating visually captivating materials for training
                         sessions and meetings with Canva, and hosting highly productive study sessions. I excel in initiating and
                         cultivating connections on professional networking platforms, such as Bumble, to forge opportunities for
@@ -459,9 +473,13 @@
       <!-- Testimonials -->
       <section id="testimonials" class="bg-black text-pink p-5">
         <div class="container">
-          <div class="display-3 text-center">Testimonials</div>
+          <div class="display-3 text-center" data-aos="fade-right"
+          data-aos-easing="linear"
+          data-aos-duration="500">Testimonials</div>
 
-          <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+          <div id="carouselExample" class="carousel slide" data-bs-ride="carousel" data-aos="fade-right"
+          data-aos-easing="linear"
+          data-aos-duration="700">
             <div class="carousel-inner">
               <div class="carousel-item active">
                 <div class="row mx-auto">
@@ -478,7 +496,9 @@
                           <i class="bi bi-star-fill text-warning"></i>
                           <i class="bi bi-star-fill text-warning"></i>
                     </div>
-                    <h2>Krystal</h2>
+                    <h2>Krystal Freedom</h2>
+                    <p class="fst-italic ">MBA</p>
+                    
                     <p>
                       
                       <i class="bi bi-chat-right-quote h4 me-1"></i>
@@ -486,6 +506,7 @@
 
                        This is great work! First day I'm impressed and grateful for your work.
                     </p>
+                    <p></p>
                     <hr>
                     <p>
                       <i class="bi bi-chat-right-quote h4 me-1"></i>
@@ -512,6 +533,7 @@
                           <i class="bi bi-star-fill text-warning"></i>
                     </div>
                     <h2>Nancy</h2>
+                    <p class="fst-italic ">CSJ Secretary</p>
                     <p>
                       "Dear Trixie, we were really enamored by our complexion of the 1st in the series of talks we are designing for our community. We got some great feedback and positive future donations for our little group. I almost want to get started on our next presentation. However, at least we all need to rest for a couple of days. You will get to see the forum as soon as it is posted on social media and YouTube. We could not have done it without you, you know. What a great lady. Your passion shows through on this issue." 
                     </p>
@@ -534,9 +556,13 @@
                           <i class="bi bi-star-fill text-warning"></i>
                     </div>
                     <h2>Gregory</h2>
+                    <p class="fst-italic ">
+                      CEO | Financial Advisor
+                    </p>
                     <p>
                       "You guys are increasing your skill level. Amazing!"
                     </p>
+                    
                   </div>
                 </div>
               </div>
@@ -555,7 +581,8 @@
                           <i class="bi bi-star-fill text-warning"></i>
                           <i class="bi bi-star-fill text-warning"></i>
                     </div>
-                    <h2>Wayne</h2>
+                    <h2>Wayne Martin Mellinger </h2>
+                    <p class="fst-italic ">Ph.D</p>
                     <p>
                       "Happy Birthday Trixie! We are lucky to have you with us!"
                     </p>
@@ -587,8 +614,12 @@
 
       <!-- Projects -->
       <section id="projects" class="p-5">
-        <div class="h1 text-center my-5">Projects</div>
-        <div class="container">
+        <div class="display-2 fw-bold  text-center my-5"data-aos="fade-right"
+        data-aos-easing="linear"
+        data-aos-duration="700">Projects</div>
+        <div class="container" data-aos="fade-down"
+        data-aos-easing="linear"
+        data-aos-duration="700">
           <div class="row g-2">
             <div class="col-md">
               <img class="img-fluid project-img" src="assets/images/sample1.png" alt="">
@@ -611,11 +642,63 @@
               <img class="img-fluid project-img" src="assets/images/sample6.png" alt="">
             </div>
           </div>
+          <div class="text-center">
+            <a href="" class="btn btn-lg btn-dark my-5"data-bs-toggle="modal" data-bs-target="#seemore"><div class="fw-bold h4">See More<i class="bi bi-arrow-up-circle ms-2"></i></div> </a>
+          </div>
+        </div>
+        <div class="modal modal-xl fade" id="seemore" tabindex="-1" aria-labelledby="seemore" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-scrollable">
+            <div class="modal-content txet-center">
+              <div class="modal-header">
+                <h1 class="modal-title fs-3" id="seemore">Sample Projects</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+                  <div class="carousel-inner">
+                    <div class="carousel-item active">
+                      <img src="assets/images/sample7.png" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                      <img src="assets/images/sample8.png" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                      <img src="assets/images/sample9.png" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                      <img src="assets/images/sample10.png" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                      <img src="assets/images/sample11.png" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                      <img src="assets/images/sample12.png" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                      <img src="assets/images/sample13.png" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                      <img src="assets/images/sample14.png" class="d-block w-100" alt="...">
+                    </div>
+                  </div>
+                  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                  </button>
+                  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                  </button>
+                </div>
+              </div>
+              
+            </div>
+          </div>
         </div>
       </section>
-
+      
       <!-- Contact me -->
-      <section id="contact" class="p-5 bg-black text-white">
+      <section id="contactme" class="p-5 bg-black text-white">
         <div class="container text-center">
           <h2>Contact Me</h2>
           <p>Feel free to get in touch with me. You can use the form below or reach out through other channels.</p>
@@ -634,6 +717,29 @@
       
 
       <script>
+        // Get the button element
+var scrollToTopBtn = document.getElementById("scrollToTopBtn");
+
+// Add a scroll event listener to the window
+window.addEventListener("scroll", function() {
+  // If the user has scrolled down enough, show the button
+  if (window.pageYOffset > 100) {
+    scrollToTopBtn.classList.add("show");
+  } else {
+    // Otherwise, hide the button
+    scrollToTopBtn.classList.remove("show");
+  }
+});
+
+// Add a click event listener to the button
+scrollToTopBtn.addEventListener("click", function() {
+  // Scroll the page to the top smoothly
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+});
+
         function openPDF() {
           // Set the path to the PDF file
           var pdfPath = 'assets/resume/Resume_Trixie_G.pdf';
