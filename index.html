@@ -162,11 +162,59 @@
 #scrollToTopBtn.show {
   display: block;
 }
+.text-decoration-none {
+                  transition: letter-spacing 0.6s ease-in-out; /* Initial transition */
+                }
 
-      
+                .text-decoration-none:hover {
+                  letter-spacing: 10px;
+                  transition-delay: 0s; /* Reset delay on hover */
+                }
+
+                .text-decoration-none:not(:hover) {
+                  letter-spacing: 0; /* Revert letter-spacing when not hovering */
+                  transition-delay: 0; /* Delay transition when not hovering */
+                }
+                
+.loading-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* Ensure it's on top of other content */
+}
+
+.loading-spinner {
+    border: 4px solid #f3f3f3; /* Light grey border */
+    border-top: 4px solid #3498db; /* Blue border */
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 2s linear infinite; /* Animation */
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.content {
+    display: none; /* Initially hide content */
+}
+
     </style>
   </head>
   <body>
+    <div class="loading-container">
+      <div class="loading-spinner"></div>
+
+  </div>
+    
     <button id="scrollToTopBtn" class="btn btn-outline-dark btn-lg hidden fs-4"><i class="bi bi-arrow-up-circle"></i></button>
 
     <div class="hero"></div>
@@ -198,7 +246,7 @@
                 <a class="nav-link" href="#projects">Projects</a>
               </li> 
             </ul>
-            <a href="#contactme" class="btn btn-dark">Contact Me</a>
+            <a href="#contactme" class="btn btn-outline-light">Contact Me</a>
           </div>
         </div>
       </nav>
@@ -501,15 +549,13 @@
                     
                     <p>
                       
-                      <i class="bi bi-chat-right-quote h4 me-1"></i>
-
-
+                     
                        This is great work! First day I'm impressed and grateful for your work.
                     </p>
                     <p></p>
                     <hr>
                     <p>
-                      <i class="bi bi-chat-right-quote h4 me-1"></i>
+                 
                       Omg!!!! Yay! This is amazing and I am proud of you and so grateful for you help on this super important project!!! We are going to do great things this year and I am doing my best to get less busy! You make this feel worth it! 
                       
                     </p>
@@ -700,16 +746,22 @@
       <!-- Contact me -->
       <section id="contactme" class="p-5 bg-black text-white">
         <div class="container text-center">
-          <h2>Contact Me</h2>
-          <p>Feel free to get in touch with me. You can use the form below or reach out through other channels.</p>
+          
+          <p class="display-3 fw-bold ">Let's Work <span class="text-danger">Together?</span></p>
           <div class="row">
             
-            <div class="col text-center">
+            <div class="col-lg-6 text-center">
               <h3>Other Information</h3>
               <p>Email: mstrixieg27@gmail.com</p>
               <p>Phone: 09286599458</p>
-              
               <p>Location: Philippines</p>
+            </div>
+           
+            <div class="col-lg-6 text-center">
+              <h3>Here is my <span class="text-warning">Social Media:</span></h3>
+              <p><a href="" class="fs-5 text-light text-decoration-none ">Facebook</a></p>
+              <p><a href="" class="fs-5 text-light text-decoration-none ">Instragram</a></p>
+              <p><a href="" class="fs-5 text-light text-decoration-none ">Linkedin</a></p>
             </div>
           </div>
         </div>
@@ -717,6 +769,17 @@
       
 
       <script>
+        document.addEventListener("DOMContentLoaded", function () {
+    // Hide loading spinner and show content when page is fully loaded
+    var loadingContainer = document.querySelector('.loading-container');
+    var content = document.querySelector('.content');
+
+    window.addEventListener('load', function () {
+        loadingContainer.style.display = 'none';
+        content.style.display = 'block';
+    });
+});
+
         // Get the button element
 var scrollToTopBtn = document.getElementById("scrollToTopBtn");
 
